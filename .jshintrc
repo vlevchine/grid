@@ -1,0 +1,17 @@
+{
+  "bitwise": false, // Prohibit bitwise operators (&, |, ^, etc.).
+  "noarg": true, // Prohibit use of `arguments.caller` and `arguments.callee`.
+  "nonew": true, // prohibits the use of constructor functions for side-effects
+  "node": true, // Enable globals available when code is running inside of the NodeJS runtime environment.
+  "browser": true, // Standard browser globals e.g. `window`, `document`.
+  "esnext": true, // Allow ES.next specific features such as `const` and `let`.
+  "camelcase": false, // Permit only camelcase for `var` and `object indexes`.
+  "curly": false, // Require {} for every new block or scope.
+  "eqeqeq": true, // Require triple equals i.e. `===`.
+  "immed": true, // Require immediate invocations to be wrapped in parens e.g. `( function(){}() );`
+  "latedef": true, // Prohibit variable use before definition.
+  "regexp": true, // Prohibit `.` and `[^...]` in regular expressions.
+  "undef": true, // Require all non-global variables be declared before they are used.
+  "unused": true, // Warn unused variables.
+  "strict": true
+}

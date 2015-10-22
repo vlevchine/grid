@@ -1,0 +1,50 @@
+{
+  "name": "grid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vlevchine/grid.git"
+  },
+  "author": "VL",
+  "license": "ISC",
+  "engines": {
+    "node": "4.2.x",
+    "npm": "3.3.x"
+  },
+  "bugs": {
+    "url": "https://github.com/vlevchine/grid/issues"
+  },
+  "homepage": "https://github.com/vlevchine/grid#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "gzippo": "^0.2.0",
+    "karma": "^0.13.11"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "chai": "^3.4.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^1.0.1",
+    "gulp-jshint": "^1.11.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.2",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.0.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-jasmine": "^0.3.6",
+    "karma-mocha": "^0.2.0",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "mocha": "^2.3.3",
+    "phantomjs": "^1.9.18"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "grid",
+  "version": "0.0.0",
+  "homepage": "https://github.com/vlevchine/grid",
+  "authors": [
+    "vlevchine <valevchine@yahoo.com>"
+  ],
+  "description": "Grid - react",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "lodash": "~3.10.1",
+    "jquery": "~2.1.4",
+    "font-awesome": "~4.4.0"
+  }
+}
