@@ -8,9 +8,14 @@ var gulp = require('gulp'),
     stylish = require('jshint-stylish'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
+    browserify = require('browserify'),
+    source = require('vinyl-source-stream'),
+    buffer = require('vinyl-buffer'),
+    sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
     autoprefixer = require('gulp-autoprefixer'),
-    csso = require('gulp-csso');
+    csso = require('gulp-csso'),
+    rt = require('gulp-react-templates');
 
 var config = {
     karma: {
@@ -31,7 +36,7 @@ var config = {
         'bower_components/bootstrap/dist/fonts/*.*',
         'bower_components/font-awesome/fonts/*.*'],
     server: [
-        'src/server/*.*']
+        'src/server/*.*', 'Procfile', 'package.json']
 };
 
 gulp.task('jshint', function() {
@@ -100,10 +105,38 @@ gulp.task('css', ['sass'], function() {
         .pipe(gulp.dest('./dist/css'))
 });
 
-gulp.task('js', function() {
-    console.log('no js files yet')
+gulp.task('rt', [], function() {
+    gulp.src(['./src/scripts/*.rt'])
+        .pipe(rt({modules: 'commonjs'}))
+        .pipe(gulp.dest('./src/compiledTemplates'));
+});
+
+gulp.task('js', ['rt'], function() {
+    return browserify({ debug: true })
+        .require('./src/scripts/app.js', { entry: true })
+        // .transform(reactify)//templatify
+        .bundle()
+        // .on('error', console.error.bind(console))
+        .pipe(source('app.js'))//following 3 lines add structure to sources in Chrome dev tools
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dist/js'));
+});
+gulp.task('js0', [], function() {
+    return browserify({ debug: true })
+        .require('./src/scripts/app.js', { entry: true })
+        // .transform(reactify)//templatify
+        .bundle()
+        // .on('error', console.error.bind(console))
+        .pipe(source('app.js'))//following 3 lines add structure to sources in Chrome dev tools
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('assets', ['vendorJS', 'fonts', 'vendorCSS']);
 gulp.task('build', ['css', 'server', 'js']);
+gulp.task('b', ['js0']);
 gulp.task('default', ['serve']);

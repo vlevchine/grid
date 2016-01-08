@@ -25,17 +25,22 @@
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "gzippo": "^0.2.0",
-    "karma": "^0.13.11"
+    "karma": "^0.13.11",
+    "react": "~0.14",
+    "react-dom": "^0.14.0"
   },
   "devDependencies": {
     "browser-sync": "^2.9.11",
+    "browserify": "^11.2.0",
     "chai": "^3.4.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^1.0.1",
     "gulp-jshint": "^1.11.2",
+    "gulp-react-templates": "^0.1.0",
     "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.4.2",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
@@ -45,6 +50,8 @@
     "karma-mocha": "^0.2.0",
     "karma-phantomjs-launcher": "^0.2.1",
     "mocha": "^2.3.3",
-    "phantomjs": "^1.9.18"
+    "phantomjs": "^1.9.18",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

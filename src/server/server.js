@@ -5,7 +5,7 @@
 var express = require('express'),
     app = new express(),
     bodyParser = require('body-parser'),
-    port = process.env.port || 3040,
+    port = process.env.PORT || 3040,
     appDir = __dirname;
 
 app.set('port', port);

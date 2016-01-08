@@ -1,6 +1,4 @@
-/**
- * Created by Vlad on 2015-10-21.
- */
+/** Created by Vlad on 2015-10-21. */
 'use strict';
 
 describe('Sanity', function() {
